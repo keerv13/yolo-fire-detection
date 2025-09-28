@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire Detection - Results</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <h2 class="page-title">Fire Detection Results 🔥</h2>
+
+    <div class="container">
+        <!-- BIG dotted box -->
+        <div class="image-upload-box">
+            {% if uploaded_file_url and result_file_url %}
+            <div class="result-grid">
+                <div class="result-box">
+                    <h3>Original</h3>
+                    <img src="{{ uploaded_file_url }}" class="preview-image" alt="Uploaded image">
+                </div>
+                <div class="result-box">
+                    <h3>Detection</h3>
+                    <img src="{{ result_file_url }}" class="preview-image" alt="Detection result">
+                </div>
+            </div>
+
+            {% if fire_detected %}
+                <h2 class="fire-yes">🔥 Fire Detected: YES</h2>
+            {% else %}
+                <h2 class="fire-no">✅ Fire Detected: NO</h2>
+            {% endif %}
+            {% endif %}
+        </div>
+
+        <!-- Buttons (always visible on results page) -->
+        <div class="button-row">
+            <a href="{% url 'upload' %}">
+                <button type="button" class="reupload-button">UPLOAD ANOTHER</button>
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>

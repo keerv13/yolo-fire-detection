@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire Detection - Upload</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <h2 class="page-title">Upload an image to check for fire 🔥</h2>
+
+    <div class="container">
+        <form method="post" enctype="multipart/form-data" id="uploadForm">
+            {% csrf_token %}
+
+            <!-- BIG dotted box -->
+            <div class="image-upload-box" id="uploadBox">
+                <!-- Hidden file input -->
+                <input type="file" id="imageUpload" name="image" accept="image/*" required>
+
+                <!-- Visible instructions + styled button -->
+                <p class="upload-text" id="uploadText">Click below or drag and drop an image here</p>
+                <label for="imageUpload" class="choose-btn" id="chooseBtn">Choose File</label>
+
+                <!-- Image preview -->
+                <div class="selected-file" id="selectedFile"></div>
+            </div>
+
+
+            <!-- Buttons (hidden at first) -->
+            <div class="button-row" id="buttonRow" style="display: none;">
+                <button type="submit" class="detect-button" id="detectBtn" disabled>DETECT</button>
+                <button type="button" class="reupload-button" id="reuploadBtn">REUPLOAD</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/upload.js' %}"></script>
+</body>
+</html>

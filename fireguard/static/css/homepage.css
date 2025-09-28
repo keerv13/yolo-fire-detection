@@ -1,0 +1,43 @@
+.image-upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 300px;
+  margin: 20px auto;
+  transition: border-color 0.3s ease;
+}
+
+.image-upload-box:hover {
+  border-color: #007bff;
+}
+
+.custom-upload-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.custom-upload-button:hover {
+  background-color: #0056b3;
+}
+
+.upload-icon {
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.upload-text {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
