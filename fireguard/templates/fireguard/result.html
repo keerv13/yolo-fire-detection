@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
 </head>
 <body>
-    <h2 class="page-title">Fire Detection Results 🔥</h2>
+    <h2 class="page-title">Fire Detection Results</h2>
 
     <div class="container">
         <!-- BIG dotted box -->
@@ -25,9 +25,9 @@
             </div>
 
             {% if fire_detected %}
-                <h2 class="fire-yes">🔥 Fire Detected: YES</h2>
+                <h2 class="fire-yes">Fire Detected: YES</h2>
             {% else %}
-                <h2 class="fire-no">✅ Fire Detected: NO</h2>
+                <h2 class="fire-no">Fire Detected: NO</h2>
             {% endif %}
             {% endif %}
         </div>
